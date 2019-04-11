@@ -3,6 +3,7 @@
     <Billboard/>
 		<DishesMenu/>
 		<DishesShowcase/>
+		<Gallery/>
   </el-main>
 </template>
 
@@ -10,13 +11,15 @@
 import Billboard from "./Billboard.vue";
 import DishesMenu from "./DishesMenu.vue";
 import DishesShowcase from "./DishesShowcase.vue";
+import Gallery from "./Gallery.vue";
 
 export default {
   name: "Main",
   components: {
 		Billboard,
 		DishesMenu,
-		DishesShowcase
+		DishesShowcase,
+		Gallery
   }
 };
 </script>
