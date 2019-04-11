@@ -1,16 +1,22 @@
 <template>
   <el-container id="app" direction="vertical">
     <Header/>
+    <Main/>
+    <Footer/>
   </el-container>
 </template>
 
 <script>
 import Header from "./components/Header/Header.vue";
+import Main from "./components/Main/Main.vue";
+import Footer from "./components/Footer/Footer.vue";
 
 export default {
   name: "app",
   components: {
     Header,
+    Main,
+    Footer
   }
 };
 </script>
