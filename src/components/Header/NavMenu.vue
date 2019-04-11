@@ -1,6 +1,6 @@
 <template>
   <el-menu mode="horizontal">
-		<el-menu-item v-for="(item, index) in items" :key="index" :index="index + 1">
+		<el-menu-item v-for="(item, index) in items" :key="index" :index="'' + index">
 			<a :href="item.url">{{ item.link }}</a>
 		</el-menu-item>
   </el-menu>
@@ -33,6 +33,7 @@ export default {
     font-style: normal;
     font-size: 16px;
     padding: 0 24px;
+		margin-bottom: 4px;
   }
 }
 </style>
