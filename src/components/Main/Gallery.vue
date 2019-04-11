@@ -2,7 +2,7 @@
   <el-row tag="section" class="gallery" type="flex" justify="center">
     <el-col :span="18">
       <el-row>
-        <el-col class="headline" :span="9">
+        <el-col class="headline" :span="15">
           <h1>THE GALLERY</h1>
         </el-col>
       </el-row>

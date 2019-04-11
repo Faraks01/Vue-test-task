@@ -130,14 +130,15 @@ export default {
         font-family: "AleoBold";
         font-weight: normal;
         font-style: normal;
-        font-size: 20px;
+        font-size: 22px;
         letter-spacing: 1px;
       }
     }
   }
 
   .menu-container {
-    margin-bottom: 86px;
+		margin: 0 !important;
+    margin-bottom: 86px !important;
 
     & > * {
       width: max-content;

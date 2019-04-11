@@ -1,8 +1,8 @@
 <template>
   <el-row tag="section" class="dishes-showcase" type="flex" justify="center" direction="vertical">
     <el-col :span="18">
-      <el-row type="flex" align="middle" class="headline">
-        <el-col :span="22">
+      <el-row type="flex" justify="space-between" align="middle" class="headline">
+        <el-col :span="15">
           <h1 class="title">FEATURED DISHES</h1>
         </el-col>
         <el-col :span="2" type="flex">
@@ -69,7 +69,8 @@ export default {
 
 <style lang="scss" scoped>
 .dishes-showcase {
-  padding: 0 15px;
+	padding: 0 15px;
+	width: 100%;
   .headline {
     margin-bottom: 56px;
     .title {
