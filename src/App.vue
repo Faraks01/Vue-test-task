@@ -27,13 +27,19 @@ body {
 }
 
 #app {
-  width: 1500px;
+  max-width: 1500px;
   height: 3088px;
   & > * {
     padding: 0;
   }
 	
 	*
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+
 		a {
 			text-decoration: none;
 		}

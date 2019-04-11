@@ -1,5 +1,5 @@
 <template>
-  <el-container class="dishes-menu" direction="vertical">
+  <el-container tag="section" class="dishes-menu" direction="vertical">
     <el-row class="figure-container" type="flex" justify="center">
       <el-col class="figure" v-bind:style="{'background-image': 'url(' + figure + ')'}">
         <span>The Menu</span>
@@ -7,7 +7,7 @@
     </el-row>
 
     <el-row class="menu-container" :gutter="117" type="flex" justify="center">
-      <el-col :span="12">
+      <el-col>
         <ul class="menu menu-left">
           <li class="item" v-for="(item, index) in leftColumnItems" :key="'' + index">
             <h4 class="headline">
@@ -20,7 +20,7 @@
         </ul>
       </el-col>
 
-      <el-col :span="12">
+      <el-col>
         <ul class="menu menu-right">
           <li class="item" v-for="(item, index) in rightColumnItems" :key="'' + index">
             <h4 class="headline">
@@ -35,8 +35,7 @@
     </el-row>
 
     <el-button @click="isActive = !isActive">
-      load more
-			<span>|</span>
+      load more<span>|</span>
       <i
         class="el-icon-right"
         :class="{'el-icon-arrow-down': !isActive, 'el-icon-arrow-up': isActive}"
@@ -105,7 +104,7 @@ export default {
 <style scoped lang='scss'>
 .dishes-menu {
 	min-height: 600px;
-	margin-bottom: 172px;
+	margin-bottom: 200px;
 
   .figure-container {
     margin-bottom: 74px;
