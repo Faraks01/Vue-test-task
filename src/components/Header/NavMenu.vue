@@ -28,12 +28,12 @@ export default {
   display: inline-block;
   border: none !important;
   .el-menu-item {
-    font-family: "AleoRegular";
+    font-family: "Aleo-Regular";
     font-weight: normal;
     font-style: normal;
     font-size: 16px;
     padding: 0 24px;
-		margin-bottom: 4px;
+		margin-bottom: 6px;
   }
 }
 </style>
