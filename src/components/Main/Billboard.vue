@@ -1,6 +1,6 @@
 <template>
   <el-container class="billboard-wrapper" direction="vertical">
-		
+
     <el-row
       type="flex"
       class="billboard"
@@ -28,7 +28,7 @@ export default {
 
 <style scoped lang='scss'>
 .billboard-wrapper {
-  height: 649px;
+  height: 574px;
 
   .billboard,
   .figure {
@@ -73,8 +73,7 @@ export default {
 
 				position: relative;
 				top: -8px;
-				letter-spacing: -1px;
-				word-spacing: 4.7px;
+				word-spacing: 5px;
 
 				&::before,
 				&::after {
@@ -84,28 +83,6 @@ export default {
 				}
 				
       }
-    }
-  }
-
-  .figure {
-    position: relative;
-    top: -4px;
-    width: 155px;
-    height: 75px;
-    background-color: #fff;
-
-    display: flex;
-
-    span {
-      display: inline-block;
-      margin: 20px auto;
-
-      color: #fff;
-      font-family: "AleoBold";
-      font-weight: normal;
-      font-style: normal;
-      font-size: 20px;
-      letter-spacing: 1px;
     }
   }
 }
