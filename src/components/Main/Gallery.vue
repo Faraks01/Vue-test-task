@@ -46,7 +46,7 @@ export default {
 	margin-top: 177px;
 	padding: 0 15px;
   .headline {
-		margin-bottom: 79px;
+		margin-bottom: 55px;
     h1 {
       display: flex;
       font-family: "Aleo-Bold";
