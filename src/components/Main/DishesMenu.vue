@@ -101,7 +101,10 @@ export default {
 <style scoped lang='scss'>
 .dishes-menu {
   min-height: 600px;
-  margin-bottom: 172px;
+	margin-bottom: 172px;
+	@include breakpoint("small") {
+    margin-bottom: 90px;
+  }
 
   .figure-container {
     margin-bottom: 74px;

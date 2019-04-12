@@ -26,27 +26,27 @@
 
 <script>
 export default {
-	name: "Gallery",
-	data() {
-		return {
-			pics: {
-				"pic1": require("../../assets/gallery-pic-1.jpg"),
-				"pic2": require("../../assets/gallery-pic-2.jpg"),
-				"pic3": require("../../assets/gallery-pic-3.jpg"),
-				"pic4": require("../../assets/gallery-pic-4.jpg"),
-				"pic5": require("../../assets/gallery-pic-5.jpg")
-			}
-		}
-	}
+  name: "Gallery",
+  data() {
+    return {
+      pics: {
+        pic1: require("../../assets/gallery-pic-1.jpg"),
+        pic2: require("../../assets/gallery-pic-2.jpg"),
+        pic3: require("../../assets/gallery-pic-3.jpg"),
+        pic4: require("../../assets/gallery-pic-4.jpg"),
+        pic5: require("../../assets/gallery-pic-5.jpg")
+      }
+    };
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .gallery {
-	margin-top: 177px;
-	padding: 0 15px;
+  margin-top: 120px;
+  padding: 0 15px;
   .headline {
-		margin-bottom: 55px;
+    margin-bottom: 55px;
     h1 {
       display: flex;
       font-family: "Aleo-Bold";
@@ -63,6 +63,6 @@ export default {
         outline: 1px solid #e3e1e1;
       }
     }
-	}
+  }
 }
 </style>
