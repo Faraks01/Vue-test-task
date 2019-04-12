@@ -6,36 +6,33 @@
       </el-col>
     </el-row>
 
-    <el-row class="menu-container" :gutter="117" type="flex" justify="center">
-      <el-col>
-        <ul class="menu menu-left">
-          <li class="item" v-for="(item, index) in leftColumnItems" :key="'' + index">
-            <h4 class="headline">
-              {{ item.headline }}
-              <span class="spacing-line"/>
-              {{ "$" + item.price }}
-            </h4>
-            <p class="note">{{ item.note }}</p>
-          </li>
-        </ul>
-      </el-col>
+    <div class="menu-container">
+      <ul class="menu menu-left">
+        <li class="item" v-for="(item, index) in leftColumnItems" :key="'' + index">
+          <h4 class="headline">
+            {{ item.headline }}
+            <span class="spacing-line"/>
+            {{ "$" + item.price }}
+          </h4>
+          <p class="note">{{ item.note }}</p>
+        </li>
+      </ul>
 
-      <el-col>
-        <ul class="menu menu-right">
-          <li class="item" v-for="(item, index) in rightColumnItems" :key="'' + index">
-            <h4 class="headline">
-              {{ item.headline }}
-              <span class="spacing-line"/>
-              {{ "$" + item.price }}
-            </h4>
-            <p class="note">{{ item.note }}</p>
-          </li>
-        </ul>
-      </el-col>
-    </el-row>
+      <ul class="menu menu-right">
+        <li class="item" v-for="(item, index) in rightColumnItems" :key="'' + index">
+          <h4 class="headline">
+            {{ item.headline }}
+            <span class="spacing-line"/>
+            {{ "$" + item.price }}
+          </h4>
+          <p class="note">{{ item.note }}</p>
+        </li>
+      </ul>
+    </div>
 
     <el-button @click="isActive = !isActive">
-      load more<span>|</span>
+      load more
+      <span>|</span>
       <i
         class="el-icon-right"
         :class="{'el-icon-arrow-down': !isActive, 'el-icon-arrow-up': isActive}"
@@ -103,8 +100,8 @@ export default {
 
 <style scoped lang='scss'>
 .dishes-menu {
-	min-height: 600px;
-	margin-bottom: 172px;
+  min-height: 600px;
+  margin-bottom: 172px;
 
   .figure-container {
     margin-bottom: 74px;
@@ -137,15 +134,19 @@ export default {
   }
 
   .menu-container {
-		margin: 0 !important;
-    margin-bottom: 86px !important;
+    margin: 0 !important;
+		margin-bottom: 30px !important;
+		
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
 
-    & > * {
-      width: max-content;
-    }
+		&>* {
+			flex: 0 0 492px;
+			margin: 0 calc(117px / 2) 56px !important;
+		}
 
     .menu {
-      width: 492px;
 
       .item {
         margin-bottom: 57px;
@@ -194,19 +195,19 @@ export default {
     width: 133px;
     height: 34px;
     margin: auto;
-		padding: 0;
-		border-radius: 0;
-		color: #b7b7b7;
+    padding: 0;
+    border-radius: 0;
+    color: #b7b7b7;
 
     font-family: "Aleo-Regular";
     font-weight: normal;
     font-style: normal;
-		font-size: 14px;
-		letter-spacing: 0.5px;
-		word-spacing: 2px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
 
     span {
-			padding: 0 10px;
+      padding: 0 10px;
     }
   }
 }
