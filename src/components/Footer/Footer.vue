@@ -1,14 +1,14 @@
 <template>
   <el-footer tag="footer" height="317px">
-    <el-row type="flex" justify="center" align="middle">
-      <ul class="footer-list" v-for="(row, key) in rows" :key="key">
+    <div class="footer-content">
+      <ul class="list" v-for="(row, key) in rows" :key="key">
         <li v-for="(item, index) in row" :key="index" :class="{ bold: item.bold }" class="item">
           <a v-if="item.url" :href="item.url">{{ item.content }}</a>
           <img v-else-if="item.logo" :src="item.logo">
           <template v-else>{{ item.content }}</template>
         </li>
       </ul>
-    </el-row>
+    </div>
   </el-footer>
 </template>
 
@@ -51,33 +51,61 @@ export default {
 <style scoped lang='scss'>
 .el-footer {
 	margin-top: 200px;
+	@include breakpoint("small") {
+    margin-top: 100px;
+  }
   background-color: #3b3b3b;
-  .el-row {
+  .footer-content {
     height: inherit;
-    padding-right: 28px;
-    .footer-list {
+    padding: 0 13.5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint("small") {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .list {
+			flex: 0 0 max-content;
+			margin: 0 10px !important;
+      margin-top: -15px !important;
       position: relative;
-      top: -8px;
-      width: max-content;
+      height: max-content;
 
       display: flex;
       flex-direction: column;
 
       &:nth-child(1) {
-        margin-right: 116px !important;
+        @include breakpoint("medium") {
+          display: none;
+        }
       }
       &:nth-child(2) {
-        margin-right: 104px !important;
+        @include breakpoint("medium") {
+          display: none;
+        }
       }
       &:nth-child(3) {
-        padding-top: 12px !important;
-        margin-right: 174px !important;
+				margin-top: 0 !important;
+        @include breakpoint("small") {
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: center;
+          .item {
+            margin: 0 10px;
+          }
+        }
         .item,
         a {
           line-height: 34px;
         }
       }
       &:nth-child(4) {
+        @include breakpoint("small") {
+          align-items: center;
+        }
         .item {
           position: relative;
           top: 10px;
