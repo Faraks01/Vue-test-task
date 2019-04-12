@@ -6,9 +6,9 @@
       </el-col>
     </el-row>
 
-    <div class="menu-container">
-      <ul class="menu menu-left">
-        <li class="item" v-for="(item, index) in leftColumnItems" :key="'' + index">
+    <div class="menu-container" :class="{expand: isActive}">
+      <ul class="menu" v-for="(value, key) in dishesData" :key="'' + key">
+        <li class="item" v-for="(item, index) in value" :key="'' + index">
           <h4 class="headline">
             {{ item.headline }}
             <span class="spacing-line"/>
@@ -18,16 +18,6 @@
         </li>
       </ul>
 
-      <ul class="menu menu-right">
-        <li class="item" v-for="(item, index) in rightColumnItems" :key="'' + index">
-          <h4 class="headline">
-            {{ item.headline }}
-            <span class="spacing-line"/>
-            {{ "$" + item.price }}
-          </h4>
-          <p class="note">{{ item.note }}</p>
-        </li>
-      </ul>
     </div>
 
     <el-button @click="isActive = !isActive">
@@ -44,56 +34,17 @@
 <script>
 export default {
   name: "DishesMenu",
-  props: {},
   data: function() {
     return {
       figure: require("../../assets/billboard-figure.jpg"),
-      isActive: false,
-      leftColumnItems: [
-        {
-          headline: "Voluptate cillum fugiat.",
-          note: "Cheese, tomato, mushrooms, onions.",
-          price: 50
-        },
-        {
-          headline: "Metus varius laoreet.",
-          note: "Chicken, mozzarella cheese, onions.",
-          price: 62
-        },
-        {
-          headline: "Donec sodales magna.",
-          note: "Tuna, Sweetcorn, Cheese.",
-          price: 25
-        },
-        {
-          headline: "Saugue velit cursus.",
-          note: "Pineapple, Minced Beef, Cheese.",
-          price: 30
-        }
-      ],
-      rightColumnItems: [
-        {
-          headline: "Arcu pede enim justo.",
-          note: "Tuna, Sweetcorn, Cheese.",
-          price: 45
-        },
-        {
-          headline: "Cras dapibussemper nisi.",
-          note: "Pineapple, Minced Beef, Cheese.",
-          price: 32
-        },
-        {
-          headline: "Quam semper libero.",
-          note: "Cheese, tomato, mushrooms, onions.",
-          price: 15
-        },
-        {
-          headline: "Nam eget dui Etiam.",
-          note: "Chicken, mozzarella cheese, onions.",
-          price: 35
-        }
-      ]
+      isActive: false
     };
+  },
+  computed: {
+    dishesData() {
+			console.log(this.$store.state.Static);
+      return this.$store.state.Static.dishesMenu;
+    }
   }
 };
 </script>
@@ -101,8 +52,8 @@ export default {
 <style scoped lang='scss'>
 .dishes-menu {
   min-height: 600px;
-	margin-bottom: 172px;
-	@include breakpoint("small") {
+  margin-bottom: 172px;
+  @include breakpoint("small") {
     margin-bottom: 90px;
   }
 
@@ -137,23 +88,33 @@ export default {
   }
 
   .menu-container {
-    margin: 0 !important;
-		margin-bottom: 30px !important;
-		
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
+		max-height: calc(323px + 56px);
+    margin: 0 auto;
+		margin-bottom: 30px;
+		padding: 0 5%;
 
-		&>* {
-			margin: 0 calc(117px / 2) 56px !important;
-			flex: 0 0 492px;
-			@include breakpoint('small') {
-				flex-basis: 300px
-			}
+    display: flex;
+		flex-flow: row wrap;
+		overflow-y: hidden;
+		justify-content: center;
+		
+		&.expand {
+			max-height: initial;
 		}
 
-    .menu {
+    @include breakpoint("medium") {
+      flex-wrap: wrap;
+    }
 
+    & > * {
+      margin: 0 calc(117px / 2) 56px !important;
+      flex: 0 0 492px;
+      @include breakpoint("small") {
+        flex-basis: 300px;
+      }
+    }
+
+    .menu {
       .item {
         margin-bottom: 57px;
         &:last-child {
@@ -181,10 +142,10 @@ export default {
             flex: 1 0 0;
             height: 0px;
             outline: 1px solid #e3e1e1;
-						margin: 12px 43px 0;
-						@include breakpoint('small') {
-								margin: 12px 20px 0;
-						}
+            margin: 12px 43px 0;
+            @include breakpoint("small") {
+              margin: 12px 20px 0;
+            }
           }
         }
 

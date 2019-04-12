@@ -9,7 +9,13 @@
         <li class="dot"></li>
       </ul>
     </div>
-    <el-card class="card" v-for="(card, index) in cards" :key="'' + index" :body-style="{ padding: '0px' }" shadow="never">
+    <el-card
+      class="card"
+      v-for="(card, index) in dishesCardsData"
+      :key="'' + index"
+      :body-style="{ padding: '0px' }"
+      shadow="never"
+    >
       <img :src="card.pic" class="picture">
       <span class="caption">
         <span>{{ card.caption }}</span>
@@ -23,62 +29,37 @@
 <script>
 export default {
   name: "DishesShowcase",
-  data() {
-    return {
-      cards: [
-        {
-          caption: "Fugiat nulla sint",
-          price: 30,
-          rating: 4,
-          pic: require("../../assets/dish-1.jpg")
-        },
-        {
-          caption: "Daute irure dolor",
-          price: 30,
-          rating: 3,
-          pic: require("../../assets/dish-2.jpg")
-        },
-        {
-          caption: "Officia deserunt mollit",
-          price: 30,
-          rating: 5,
-          pic: require("../../assets/dish-3.jpg")
-        },
-        {
-          caption: "Pim minim veniam",
-          price: 30,
-          rating: 4,
-          pic: require("../../assets/dish-4.jpg")
-        }
-      ]
-    };
+  computed: {
+    dishesCardsData() {
+      return this.$store.state.Static.dishesCards;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .dishes-showcase {
-	padding: 0 12.3%;
-	&>* {
-		margin: 0 15px;
-	}
+  padding: 0 12.3%;
+  & > * {
+    margin: 0 15px;
+  }
 
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	@include breakpoint('small') {
-		justify-content: center;
-	}
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  @include breakpoint("small") {
+    justify-content: center;
+  }
   .headline {
-		flex: 0 0 100%;
-		margin-bottom: 56px;
+    flex: 0 0 100%;
+    margin-bottom: 56px;
 
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
-		align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     .title {
-			flex: 0 2 415px;
+      flex: 0 2 415px;
 
       display: flex;
       font-family: "Aleo-Bold";
@@ -89,14 +70,14 @@ export default {
         content: "";
         margin: auto;
         margin-left: 19px;
-				height: 0;
-				flex: 1;
+        height: 0;
+        flex: 1;
         outline: 1px solid #e3e1e1;
       }
     }
 
     .dots-indicator {
-			margin-right: 30px !important;
+      margin-right: 30px !important;
 
       width: max-content;
       display: flex;
@@ -114,10 +95,10 @@ export default {
     }
   }
   .card {
-		flex: 0 0 230px;
+    flex: 0 0 230px;
     height: 268px;
-		border: none;
-		margin-bottom: 56px;
+    border: none;
+    margin-bottom: 56px;
 
     .picture {
       display: block;
