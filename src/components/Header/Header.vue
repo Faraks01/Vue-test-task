@@ -31,7 +31,10 @@ export default {
 
   .el-col {
     display: flex;
-    justify-content: space-between;
+		justify-content: space-between;
+		@include breakpoint('medium') {
+			justify-content: center;
+		}
     padding: 0 18px 0 42px;
     align-items: center;
   }
