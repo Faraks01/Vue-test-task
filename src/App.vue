@@ -27,7 +27,6 @@ body {
 }
 
 #app {
-  max-width: 1500px;
   height: 3088px;
   & > * {
     padding: 0;
