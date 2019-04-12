@@ -1,6 +1,5 @@
 <template>
   <el-container class="billboard-wrapper" direction="vertical">
-
     <el-row
       type="flex"
       class="billboard"
@@ -11,7 +10,6 @@
         <p>resto restaurant home page website template</p>
       </el-col>
     </el-row>
-
   </el-container>
 </template>
 
@@ -58,8 +56,8 @@ export default {
         font-family: "WCManoNegraBtaRegular";
         font-weight: normal;
         font-style: normal;
-				font-size: 100px;
-				
+        font-size: 100px;
+
         position: relative;
         left: -5px;
         letter-spacing: -9px;
@@ -69,19 +67,33 @@ export default {
         font-family: "Aleo-Regular";
         font-weight: normal;
         font-style: normal;
-				font-size: 16px;
+        font-size: 16px;
 
-				position: relative;
-				top: -8px;
-				word-spacing: 5px;
+        position: relative;
+        top: -8px;
+        word-spacing: 5px;
 
-				&::before,
-				&::after {
-					content: "————";
-					letter-spacing: -2px;
-					margin: 0 30px
-				}
-				
+        &::before,
+        &::after {
+          content: "————";
+          letter-spacing: -2px;
+          margin: 0 30px;
+        }
+      }
+
+      @include breakpoint("small") {
+        h1 {
+          font-size: 70px;
+          letter-spacing: -4px;
+        }
+
+        p {
+					font-size: 14px;
+          &::before,
+          &::after {
+            display: none;
+          }
+        }
       }
     }
   }

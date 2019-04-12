@@ -50,10 +50,11 @@ export default {
 
 <style scoped lang='scss'>
 .el-footer {
+	margin-top: 200px;
   background-color: #3b3b3b;
   .el-row {
-		height: inherit;
-		padding-right: 28px;
+    height: inherit;
+    padding-right: 28px;
     .footer-list {
       position: relative;
       top: -8px;
@@ -65,43 +66,43 @@ export default {
       &:nth-child(1) {
         margin-right: 116px !important;
       }
-      &:nth-child(2) {  
-				margin-right: 104px !important;
+      &:nth-child(2) {
+        margin-right: 104px !important;
       }
       &:nth-child(3) {
-				padding-top: 12px !important;
-				margin-right: 174px !important;
-				.item,
-      	a {
-					line-height: 34px;
-				}
-			}
-			&:nth-child(4) {
-				.item {
-					position: relative;
-					top: 10px;
-					letter-spacing: 1px;
-					line-height: 30px;
-					font-size: 14px;
-					img {
-						position: relative;
-						top: -12px;
-					}
-				}
-			}
+        padding-top: 12px !important;
+        margin-right: 174px !important;
+        .item,
+        a {
+          line-height: 34px;
+        }
+      }
+      &:nth-child(4) {
+        .item {
+          position: relative;
+          top: 10px;
+          letter-spacing: 1px;
+          line-height: 30px;
+          font-size: 14px;
+          img {
+            position: relative;
+            top: -12px;
+          }
+        }
+      }
       .item,
       a {
         display: inline-block;
         width: max-content;
         color: #fff;
         font-family: "Aleo-Light";
-				font-size: 16px;
-				letter-spacing: 1px;
-				line-height: 30px;
-				
-				&.bold {
-					font-family: "Aleo-Bold";
-				}
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 30px;
+
+        &.bold {
+          font-family: "Aleo-Bold";
+        }
       }
     }
   }

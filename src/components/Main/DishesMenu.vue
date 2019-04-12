@@ -142,8 +142,11 @@ export default {
 		justify-content: center;
 
 		&>* {
-			flex: 0 0 492px;
 			margin: 0 calc(117px / 2) 56px !important;
+			flex: 0 0 492px;
+			@include breakpoint('small') {
+				flex-basis: 300px
+			}
 		}
 
     .menu {
@@ -174,8 +177,11 @@ export default {
             display: inline-block;
             flex: 1 0 0;
             height: 0px;
-            margin: 12px 43px 0;
             outline: 1px solid #e3e1e1;
+						margin: 12px 43px 0;
+						@include breakpoint('small') {
+								margin: 12px 20px 0;
+						}
           }
         }
 
